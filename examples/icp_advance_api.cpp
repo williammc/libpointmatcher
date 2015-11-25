@@ -267,7 +267,7 @@ int main(int argc, const char *argv[])
 // The following code allows to dump all existing modules
 template<typename R>
 void dumpRegistrar(const PM& pm, const R& registrar, const std::string& name,
-				   CurrentBibliography& bib)
+                   PointMatcherSupport::CurrentBibliography& bib)
 {
 	cout << "* " << name << " *\n" << endl;
 	for (BOOST_AUTO(it, registrar.begin()); it != registrar.end(); ++it)
@@ -284,7 +284,7 @@ void dumpRegistrar(const PM& pm, const R& registrar, const std::string& name,
 
 void listModules()
 {
-	CurrentBibliography bib;
+  PointMatcherSupport::CurrentBibliography bib;
 
 	DUMP_REGISTRAR_CONTENT(PM::get(), Transformation, bib)
 			DUMP_REGISTRAR_CONTENT(PM::get(), DataPointsFilter, bib)

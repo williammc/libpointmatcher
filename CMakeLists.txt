@@ -108,6 +108,7 @@ if (Boost_MINOR_VERSION GREATER 47)
 	find_package(Boost COMPONENTS thread filesystem system program_options date_time chrono REQUIRED)
 endif (Boost_MINOR_VERSION GREATER 47)
 include_directories(${Boost_INCLUDE_DIRS})
+link_directories(D:/deps_x64_vc12/boost_1_57_0/lib64-msvc-12.0)
 set(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${Boost_LIBRARIES})
 
 

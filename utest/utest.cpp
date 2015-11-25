@@ -164,8 +164,9 @@ TEST(icpTest, icpIdentity)
 
 	// Compute current ICP transform
 	PM::TransformationParameters curT = icp(pts0, pts1);
-    
-	EXPECT_EQ(curT, PM::Matrix::Identity(4,4)) << "Expecting identity transform." << endl;
+  
+  for (int i = 0; i < 4; ++i)
+	  EXPECT_EQ(curT(i, i), 1.0) << "Expecting identity transform." << endl;
 }
 
 TEST(icpTest, icpSequenceTest)
@@ -256,7 +257,7 @@ int main(int argc, char **argv)
 
 	if(dataPath == "")
 	{
-		cerr << "Missing the flag --path ./path/to/examples/data\n Please give the path to the test data folder which should be included with the source code. The folder is named 'examples/data'." << endl;
+		cerr << "Missing the flag --path ./path/to/examples/data/\n Please give the path to the test data folder which should be included with the source code. The folder is named 'examples/data'." << endl;
 		return -1;
 	}
 
